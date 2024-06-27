@@ -7,7 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package FloatAds
  * @version 1.0
  * @author chatgpt
- * @link https://example.com
+ * @link https://github.com/dylanbai8
  */
 class FloatAds_Plugin implements Typecho_Plugin_Interface
 {
@@ -37,11 +37,15 @@ class FloatAds_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form)
     {
-        $leftAdImg = new Typecho_Widget_Helper_Form_Element_Text('leftAdImg', NULL, 'https://www.wikihow.com/images/thumb/d/d0/Mental_age_test.png/728px-Mental_age_test.png', _t('左侧广告图片链接'), _t('在这里输入左侧广告图片的链接'));
+        $leftAdImg = new Typecho_Widget_Helper_Form_Element_Text('leftAdImg', NULL, 'https://pic.616pic.com/ys_img/00/05/26/v5exFzB3eh.jpg', _t('左侧广告图片'), _t('图片尺寸：宽100px 高450px'));
         $form->addInput($leftAdImg);
+        $leftAdImg_url = new Typecho_Widget_Helper_Form_Element_Text('leftAdImg_url', NULL, 'https://typecho.org/', _t('左侧广告链接'), _t('广告跳转链接'));
+        $form->addInput($leftAdImg_url);
 
-        $rightAdImg = new Typecho_Widget_Helper_Form_Element_Text('rightAdImg', NULL, 'https://www.wikihow.com/images/thumb/d/d0/Mental_age_test.png/728px-Mental_age_test.png', _t('右侧广告图片链接'), _t('在这里输入右侧广告图片的链接'));
+        $rightAdImg = new Typecho_Widget_Helper_Form_Element_Text('rightAdImg', NULL, 'https://pic.616pic.com/ys_img/00/05/26/v5exFzB3eh.jpg', _t('右侧广告图片'), _t('图片尺寸：宽100px 高450px'));
         $form->addInput($rightAdImg);
+        $rightAdImg_url = new Typecho_Widget_Helper_Form_Element_Text('rightAdImg_url', NULL, 'https://typecho.org/', _t('右侧广告链接'), _t('广告跳转链接'));
+        $form->addInput($rightAdImg_url);
     }
 
     /**
@@ -59,7 +63,9 @@ class FloatAds_Plugin implements Typecho_Plugin_Interface
     public static function renderAds()
     {
         $leftAdImg = Typecho_Widget::widget('Widget_Options')->plugin('FloatAds')->leftAdImg;
+        $leftAdImg_url = Typecho_Widget::widget('Widget_Options')->plugin('FloatAds')->leftAdImg_url;
         $rightAdImg = Typecho_Widget::widget('Widget_Options')->plugin('FloatAds')->rightAdImg;
+        $rightAdImg_url = Typecho_Widget::widget('Widget_Options')->plugin('FloatAds')->rightAdImg_url;
 
         if ($leftAdImg || $rightAdImg) {
             echo <<<EOT
@@ -82,10 +88,14 @@ class FloatAds_Plugin implements Typecho_Plugin_Interface
 }
 </style>
 <div id="left-image" class="floating-image">
-    <img src="$leftAdImg" alt="左侧图片" width="100" height="450">
+    <a href="$leftAdImg_url" target="_blank">
+        <img src="$leftAdImg" alt="左侧图片" width="100" height="450">
+    </a>
 </div>
 <div id="right-image" class="floating-image">
-    <img src="$rightAdImg" alt="右侧图片" width="100" height="450">
+    <a href="$rightAdImg_url" target="_blank">
+        <img src="$rightAdImg" alt="右侧图片" width="100" height="450">
+    </a>
 </div>
 EOT;
         }
