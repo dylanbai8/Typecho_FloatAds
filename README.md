@@ -21,4 +21,10 @@ https://pic.616pic.com/ys_img/00/05/26/v5exFzB3eh.jpg
 
 ```
 
-![image](https://github.com/dylanbai8/Typecho_FloatAds/assets/26950227/5ba281e1-46db-4fc7-b06b-d9bdcc893c10)
+![image](https://github.com/dylanbai8/Typecho_FloatAds/assets/26950227/979a1153-4d4f-4721-acf4-2003c0a48593)
+
+![image](https://github.com/dylanbai8/Typecho_FloatAds/assets/26950227/24e5d2ac-72d7-4257-a0f8-6e68c85d66fb)
+
+![image](https://github.com/dylanbai8/Typecho_FloatAds/assets/26950227/8ee12dd2-a814-4d04-9340-2829351e4b97)
+
+
