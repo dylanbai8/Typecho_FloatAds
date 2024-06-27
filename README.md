@@ -2,6 +2,9 @@
 
 Typecho 对联广告 插件 (由ChatGPT生成)
 
+https://www.123pan.com/s/yFT9-IG8ch.html
+
+
 # ChatGPT 提示词
 ```
 使用php为typecho博客写一个插件，功能如下：
